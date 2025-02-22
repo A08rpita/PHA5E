@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+body {
+    background-color: #111;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    z-index: 1000;
+}
+
+/* Hero Section */
+.hero-container {
+    position: relative;
+    margin-top: 120px; /* Push down due to fixed navbar */
+    text-align: center;
+    padding: 50px 20px;
+    overflow: hidden;
+}
+
+/* Hero Text */
+.hero-text {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+    margin: 40px 0;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Image Rows */
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+/* Image Wrapper */
+.image-wrapper {
+    width: 300px; /* Fixed width for consistency */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Images */
+.hover-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease-in-out;
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+/* Image Heading (Now fully inside the image) */
+.image-heading {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* Hover Effect */
+.image-wrapper:hover .hover-image {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.image-wrapper:hover .image-heading {
+    opacity: 1;
+}
+
+/* Smooth Appearance Animation */
+.gsap-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Mouse Movement Effect */
+.image-wrapper {
+    position: relative;
+}
+
+.image-wrapper:hover .hover-image {
+    transition: transform 0.2s ease-out;
+}
+
+.image-wrapper:hover .hover-image.move {
+    transform: translate(5px, 5px) scale(1.1);
+}
